@@ -20,6 +20,8 @@ class player
         void addCard(int color, int power);
         void printDeck() const noexcept;
         inline int getNbCards() const noexcept { return playerDeck.size(); };
+        inline card getCard() { return *playerDeck.front(); };
+        inline void popLastCard() { playerDeck.erase(playerDeck.begin()); };
     private:
         std::vector<std::unique_ptr<card>> playerDeck;
 };
